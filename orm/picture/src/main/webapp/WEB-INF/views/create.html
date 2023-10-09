@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/song">Back</a>
+<h1>Thêm mới</h1>
+<form th:object="${song}" action="/song/create" method="post">
+    Name
+    <input  th:field="*{name}"/><br>
+    Actor
+    <input th:field="*{actor}"><br>
+    Type
+    <input type="radio" th:field="*{type}" th:value="1" th:text="EDM"/>
+    <input type="radio" th:field="*{type}" th:value="0" th:text="Soft"/>
+    Link
+    <input th:field="*{link}"><br>
+    <button>Save</button>
+</form>
+</body>
+</html>
